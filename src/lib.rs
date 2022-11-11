@@ -119,9 +119,6 @@ declare_time!(usize);
 declare_time!(isize);
 declare_time!(float f32);
 declare_time!(float f64);
-declare_time!(Vec2);
-declare_time!(Vec3);
-declare_time!(Vec4);
 
 declare_value!(float f32);
 declare_value!(float f64);
@@ -133,6 +130,21 @@ declare_value!(u32);
 declare_value!(u64);
 declare_value!(usize);
 declare_value!(isize);
-declare_value!(Vec2);
-declare_value!(Vec3);
-declare_value!(Vec4);
+
+        impl TweenValue for Vec3 {
+            const ZERO: Self = Vec3::new(0.0,0.0,0.0);
+
+            fn add(self, other: Self) -> Self {
+                self + other
+            }
+
+            fn calculate_delta(destination: Self, start: Self) -> Self {
+                destination - start
+            }
+
+            fn scale(self, scale: f64) -> Self {
+                (self * scale) as Vec3
+            }
+        }
+
+
