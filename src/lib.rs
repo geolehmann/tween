@@ -26,6 +26,7 @@ pub use tweener::*;
 pub use tweens::*;
 
 use core::ops::RangeInclusive;
+use ultraviolet::{Vec2, Vec3, Vec4};
 
 /// This is the core trait of the Library, which all `tweens` implement.
 ///
@@ -118,6 +119,9 @@ declare_time!(usize);
 declare_time!(isize);
 declare_time!(float f32);
 declare_time!(float f64);
+declare_time!(Vec2);
+declare_time!(Vec3);
+declare_time!(Vec4);
 
 declare_value!(float f32);
 declare_value!(float f64);
@@ -129,3 +133,6 @@ declare_value!(u32);
 declare_value!(u64);
 declare_value!(usize);
 declare_value!(isize);
+declare_value!(Vec2);
+declare_value!(Vec3);
+declare_value!(Vec4);
