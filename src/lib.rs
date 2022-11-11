@@ -143,7 +143,7 @@ declare_value!(isize);
             }
 
             fn scale(self, scale: f64) -> Self {
-                (self * scale) as Vec3
+                (self * scale as f32) as Vec3
             }
         }
 
